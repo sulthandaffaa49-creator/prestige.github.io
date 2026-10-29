@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail - Honda CR-V Turbo Prestige</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; }
+        header { background-color: #1a1a1a; color: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #e50914; text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav ul li a { color: #fff; text-decoration: none; }
+        
+        /* Layout Utama Detail */
+        .container { max-width: 1000px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+        .detail-img { width: 100%; height: 350px; object-fit: cover; border-radius: 6px; }
+        .detail-info h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .price { font-size: 1.5rem; color: #e50914; font-weight: bold; margin-bottom: 1rem; }
+        .specs-list { list-style: none; margin-bottom: 1.5rem; }
+        .specs-list li { padding: 0.5rem 0; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        
+        .action-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .btn-buy { background-color: #25d366; color: white; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; }
+        .btn-back { color: #666; text-decoration: none; display: inline-block; margin-top: 1rem; }
+
+        /* Form Jadwalkan Test Drive di Halaman Detail */
+        .test-drive-section {
+            border-top: 2px solid #eee;
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+        .test-drive-section h3 {
+            margin-bottom: 1.2rem;
+            color: #1a1a1a;
+            font-size: 1.4rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group.full {
+            grid-column: span 2;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            background-color: white;
+        }
+        .btn-submit {
+            background-color: #e50914;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .btn-submit:hover {
+            background-color: #b20710;
+        }
+
+        footer { background-color: #1a1a1a; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
+
+        @media (max-width: 768px) {
+            .detail-grid, .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">AutoPrestige</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="referensi.html">Referensi</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Informasi Utama & Foto Mobil -->
+        <div class="detail-grid">
+            <div>
+                <img src="gambar/crv.jpg" alt="Honda CR-V Turbo Prestige" class="detail-img">
+            </div>
+            <div class="detail-info">
+                <span style="color: #e50914; font-weight: bold; text-transform: uppercase; font-size: 0.85rem;">SUV</span>
+                <h1>Honda CR-V Turbo Prestige</h1>
+                <div class="price">Rp 739.000.000</div>
+                
+                <ul class="specs-list">
+                    <li><strong>Tahun:</strong> 2025</li>
+                    <li><strong>Transmisi:</strong> CVT</li>
+                    <li><strong>Mesin:</strong> 1.5L VTEC Turbo</li>
+                    <li><strong>Kapasitas:</strong> 7 Penumpang</li>
+                </ul>
+
+                <p style="margin-bottom: 1.5rem; color: #555; font-size: 0.9rem;">
+                    SUV kelas atas dengan teknologi keselamatan Honda Sensing, desain eksterior yang elegan, serta kenyamanan berkendara di berbagai medan.
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://wa.me/628123456789?text=Halo,%20saya%20tertarik%20dengan%20Honda%20CR-V%20Turbo%20Prestige" target="_blank" class="btn-buy">Pesan via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian Form Jadwalkan Test Drive -->
+        <div class="test-drive-section">
+            <h3>Jadwalkan Test Drive untuk Mobil Ini</h3>
+            <form onsubmit="event.preventDefault(); alert('Permintaan Test Drive untuk Honda CR-V berhasil dikirim! Tim kami akan segera menghubungi Anda.');">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor WhatsApp</label>
+                        <input type="text" placeholder="Contoh: 08123456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Tanggal Kunjungan</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Waktu Pilihan (Jam Operasional)</label>
+                        <select required>
+                            <option value="" disabled selected>-- Pilih Jam Test Drive --</option>
+                            <option value="10:00">10:00 Pagi</option>
+                            <option value="11:00">11:00 Pagi</option>
+                            <option value="13:00">01:00 Siang</option>
+                            <option value="14:00">02:00 Siang</option>
+                            <option value="15:00">03:00 Sore</option>
+                            <option value="16:00">04:00 Sore</option>
+                            <option value="17:00">05:00 Sore</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <button type="submit" class="btn-submit">Kirim Jadwal Test Drive</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <a href="produk.html" class="btn-back">&larr; Kembali ke Katalog Produk</a>
+    </div>
+
+    <footer><p>&copy; 2026 AutoPrestige Showroom. Dibuat untuk tugas sekolah.</p></footer>
+
+</body>
+</html>

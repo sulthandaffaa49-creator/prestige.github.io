@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPrestige - Showroom Mobil Impian Anda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            display: block;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #e50914;
+        }
+
+        /* Tombol Login di Header */
+        .btn-login {
+            background-color: transparent;
+            border: 2px solid #e50914;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: #e50914;
+        }
+
+        /* Styling Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1a1a1a;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            list-style: none;
+            min-width: 180px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+        .dropdown-menu li a {
+            padding: 0.7rem 1rem;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #e50914;
+        }
+
+        nav ul li.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('gambar/banner.jpg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: #e50914;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b20710;
+        }
+
+        /* Container Utama */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #1a1a1a;
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .car-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-info {
+            padding: 1.5rem;
+        }
+
+        .car-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .car-price {
+            color: #e50914;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .car-specs {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Tambahan: Simulasi Kredit & Test Drive (Grid 2 Kolom) */
+        .extra-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .card-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card-box h3 {
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e50914;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive untuk layar HP */
+        @media (max-width: 768px) {
+            .extra-sections {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <a href="index.html" class="logo" style="text-decoration: none; color: #e50914;">AutoPrestige</a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Beranda</a></li>
+                
+                <!-- Menu Produk dengan Dropdown -->
+                <li class="dropdown">
+                    <a href="produk.html">Produk &#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="produk.html">Semua Produk</a></li>
+                        <li><a href="produk.html">SUV</a></li>
+                        <li><a href="produk.html">MPV</a></li>
+                        <li><a href="produk.html">Sedan</a></li>
+                        <li><a href="produk.html">Convertible</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="referensi.html">Referensi</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Temukan Mobil Impian Anda di Sini</h1>
+        <p>Koleksi mobil baru dan bekas berkualitas tinggi dengan penawaran harga terbaik serta proses kredit yang mudah.</p>
+        <a href="produk.html" class="btn">Lihat Katalog Mobil</a>
+    </section>
+
+    <!-- Produk Unggulan -->
+    <div class="container">
+        <h2 class="section-title">Mobil Unggulan</h2>
+        <div class="car-grid">
+            <!-- Kartu Mobil 1 -->
+            <div class="car-card">
+                <img src="gambar/bmw.jpg" alt="BMW Series 3" class="car-img">
+                <div class="car-info">
+                    <h3>BMW 320i Sport</h3>
+                    <div class="car-price">Rp 850.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | Transmisi: Otomatis | Bahan Bakar: Bensin</p>
+                    <a href="bmw.html" class="btn" style="display: block; text-align: center; padding: 0.5rem 1rem; font-size: 0.9rem;">Detail Produk</a>
+                </div>
+            </div>
+
+            <!-- Kartu Mobil 2 -->
+            <div class="car-card">
+                <img src="gambar/mercy.jpg" alt="Mercedes Benz" class="car-img">
+                <div class="car-info">
+                    <h3>Mercedes-Benz C200</h3>
+                    <div class="car-price">Rp 920.000.000</div>
+                    <p class="car-specs">Tahun: 2022 | Transmisi: Otomatis | Bahan Bakar: Bensin</p>
+                    <a href="mercy.html" class="btn" style="display: block; text-align: center; padding: 0.5rem 1rem; font-size: 0.9rem;">Detail Produk</a>
+                </div>
+            </div>
+
+            <!-- Kartu Mobil 3 -->
+            <div class="car-card">
+                <img src="gambar/fortuner.jpg" alt="Sport Car" class="car-img">
+                <div class="car-info">
+                    <h3>Toyota Fortuner GR Sport</h3>
+                    <div class="car-price">Rp 600.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | Transmisi: Otomatis | Bahan Bakar: Bensin</p>
+                    <a href="fortuner.html" class="btn" style="display: block; text-align: center; padding: 0.5rem 1rem; font-size: 0.9rem;">Detail Produk</a>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- Jadwalkan Test Drive -->
+            <div class="card-box">
+                <h3>Jadwalkan Test Drive</h3>
+                <form onsubmit="event.preventDefault(); alert('Jadwal Test Drive berhasil dikirim! Tim kami akan menghubungi Anda.');">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor WhatsApp</label>
+                        <input type="text" placeholder="Contoh: 08123456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Tanggal</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Model Mobil yang Dicoba</label>
+                        <input type="text" placeholder="Contoh: Honda Civic RS" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; background-color: #1a1a1a;">Kirim Permintaan</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AutoPrestige Showroom. Dibuat untuk tugas sekolah.</p>
+    </footer>
+
+</body>
+</html>

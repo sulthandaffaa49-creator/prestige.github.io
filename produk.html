@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - AutoPrestige</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #e50914;
+        }
+
+        /* Container Produk */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            color: #1a1a1a;
+        }
+
+        /* Tombol Filter Kategori */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #e50914;
+            color: white;
+        }
+
+        /* Grid Produk */
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .car-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .car-info {
+            padding: 1.5rem;
+        }
+
+        .car-category {
+            display: inline-block;
+            background-color: #ffebee;
+            color: #e50914;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .car-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .car-price {
+            color: #e50914;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .car-specs {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn-detail {
+            display: block;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 0.6rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-detail:hover {
+            background-color: #e50914;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <a href="index.html" class="logo" style="text-decoration: none; color: #e50914;">AutoPrestige</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html" class="active">Produk</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="referensi.html">Referensi</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Utama Katalog -->
+    <div class="container">
+        <h1 class="page-title">Katalog Koleksi Mobil</h1>
+        
+        <!-- Tombol Filter -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterCategory('all')">Semua</button>
+            <button class="filter-btn" onclick="filterCategory('suv')">SUV</button>
+            <button class="filter-btn" onclick="filterCategory('mpv')">MPV</button>
+            <button class="filter-btn" onclick="filterCategory('sedan')">Sedan</button>
+            <button class="filter-btn" onclick="filterCategory('convertible')">Convertible & Sport</button>
+        </div>
+
+        <!-- Daftar 12 Produk Mobil -->
+        <div class="car-grid" id="carGrid">
+
+            <!-- 1. SUV -->
+            <div class="car-card" data-category="suv">
+                <img src="gambar/fortuner.jpg" alt="Toyota Fortuner" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">SUV</span>
+                    <h3>Toyota Fortuner GR Sport</h3>
+                    <div class="car-price">Rp 600.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | 2.7L Diesel | Otomatis</p>
+                <a href="fortuner.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 2. SUV -->
+            <div class="car-card" data-category="suv">
+                <img src="gambar/pajero.jpg" alt="Mitsubishi Pajero Sport" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">SUV</span>
+                    <h3>Mitsubishi Pajero Sport Dakar</h3>
+                    <div class="car-price">Rp 580.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | 2.4L Diesel | Otomatis</p>
+                    <a href="pajero.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 3. SUV -->
+            <div class="car-card" data-category="suv">
+                <img src="gambar/crv.jpg" alt="Honda CR-V" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">SUV</span>
+                    <h3>Honda CR-V Turbo Prestige</h3>
+                    <div class="car-price">Rp 739.000.000</div>
+                    <p class="car-specs">Tahun: 2025 | 1.5L Turbo | CVT</p>
+                <a href="crv.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 4. MPV -->
+            <div class="car-card" data-category="mpv">
+                <img src="gambar/innova.jpg" alt="Toyota Innova Zenix" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">MPV</span>
+                    <h3>Toyota Innova Zenix Hybrid</h3>
+                    <div class="car-price">Rp 470.000.000</div>
+                    <p class="car-specs">Tahun: 2026 | 2.0L Hybrid | CVT</p>
+                <a href="innova.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 5. MPV -->
+            <div class="car-card" data-category="mpv">
+                <img src="gambar/staria.jpg" alt="Hyundai Staria" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">MPV</span>
+                    <h3>Hyundai Staria Signature 9</h3>
+                    <div class="car-price">Rp 905.000.000</div>
+                    <p class="car-specs">Tahun: 2025 | 2.2L CRDi VGT Diesel | Otomatis</p>
+                <a href="staria.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 6. MPV -->
+            <div class="car-card" data-category="mpv">
+                <img src="gambar/alphard.jpg" alt="Toyota Alphard" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">MPV</span>
+                    <h3>Toyota Alphard 2.5 G</h3>
+                    <div class="car-price">Rp 1.450.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | 2.5L Bensin | Otomatis</p>
+                <a href="alphard.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 7. Sedan -->
+            <div class="car-card" data-category="sedan">
+                <img src="gambar/bmw.jpg" alt="BMW 320i" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">Sedan</span>
+                    <h3>BMW 320i Sport</h3>
+                    <div class="car-price">Rp 850.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | 2.0L TwinPower | Otomatis</p>
+                <a href="bmw.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 8. Sedan -->
+            <div class="car-card" data-category="sedan">
+                <img src="gambar/mercy.jpg" alt="Mercedes Benz C200" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">Sedan</span>
+                    <h3>Mercedes-Benz C200 Avantgarde</h3>
+                    <div class="car-price">Rp 920.000.000</div>
+                    <p class="car-specs">Tahun: 2022 | 1.5L Turbo | Otomatis</p>
+                <a href="mercy.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 9. Sedan -->
+            <div class="car-card" data-category="sedan">
+                <img src="gambar/civic.jpg" alt="Honda Civic RS" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">Sedan</span>
+                    <h3>Honda Civic RS Sedan</h3>
+                    <div class="car-price">Rp 616.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | 1.5L VTEC Turbo | CVT</p>
+                <a href="civic.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 10. Convertible -->
+            <div class="car-card" data-category="convertible">
+                <img src="gambar/911.jpg" alt="Porsche 911 Carrera Cabriolet" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">Convertible</span>
+                    <h3>Porsche 911 Carrera Cabriolet</h3>
+                    <div class="car-price">Rp 3.800.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | 3.0L Twin-Turbo | PDK</p>
+                <a href="911.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 11. Convertible -->
+            <div class="car-card" data-category="convertible">
+                <img src="gambar/z4.jpg" alt="BMW Z4 Roadster" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">Convertible</span>
+                    <h3>BMW Z4 sDrive30i Roadster</h3>
+                    <div class="car-price">Rp 1.550.000.000</div>
+                    <p class="car-specs">Tahun: 2022 | 2.0L Turbo | Otomatis</p>
+                <a href="z4.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- 12. Convertible -->
+            <div class="car-card" data-category="convertible">
+                <img src="gambar/mustang.jpg" alt="Ford Mustang Convertible" class="car-img">
+                <div class="car-info">
+                    <span class="car-category">Convertible</span>
+                    <h3>Ford Mustang 2.3L EcoBoost Convertible</h3>
+                    <div class="car-price">Rp 1.750.000.000</div>
+                    <p class="car-specs">Tahun: 2023 | 2.3L EcoBoost | Otomatis</p>
+                <a href="mustang.html" class="btn-detail">Lihat Detail</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AutoPrestige Showroom. Dibuat untuk tugas sekolah.</p>
+    </footer>
+
+    <!-- Skrip JavaScript untuk Filter Kategori -->
+    <script>
+        function filterCategory(category) {
+            // Mengatur tombol aktif
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Menyaring kartu mobil
+            const cards = document.querySelectorAll('.car-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

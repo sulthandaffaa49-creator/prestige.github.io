@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - AutoPrestige</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e50914;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #e50914;
+        }
+
+        .btn-login {
+            background-color: transparent;
+            border: 2px solid #e50914;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: #e50914;
+        }
+
+        /* Container Utama Profil */
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #1a1a1a;
+        }
+
+        .profile-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #e50914;
+            padding-bottom: 0.3rem;
+        }
+
+        .profile-content p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .profile-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .profile-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <a href="index.html" class="logo">AutoPrestige</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="referensi.html">Referensi</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <h2 class="section-title">Tentang AutoPrestige</h2>
+
+        <div class="profile-content">
+            <h3>Siapa Kami?</h3>
+            <p>
+                <strong>AutoPrestige</strong> adalah *showroom* mobil baru dan bekas berkualitas tinggi yang berdiri sejak tahun 2023. Kami berfokus untuk menyediakan berbagai pilihan kendaraan mulai dari kelas keluarga, SUV tangguh, hingga mobil sport mewah impian dengan standar kualitas terkurasi.
+            </p>
+
+            <h3>Visi & Misi</h3>
+            <p><strong>Visi:</strong> Menjadi penyedia showroom otomotif terpercaya dan terdepan yang memberikan pengalaman kepemilikan mobil terbaik bagi pelanggan.</p>
+            <p><strong>Misi:</strong></p>
+            <ul>
+                <li>Menyediakan koleksi mobil berkualitas tinggi yang terjamin keaslian dokumen dan kondisinya.</li>
+                <li>Memberikan kemudahan proses transaksi, mulai dari simulasi kredit transparan hingga konsultasi pembelian.</li>
+                <li>Mengutamakan kepuasan pelanggan melalui pelayanan ramah, profesional, dan solutif.</li>
+            </ul>
+
+            <h3>Mengapa Memilih Kami?</h3>
+            <p>
+                Setiap unit mobil yang kami tawarkan telah melalui tahap inspeksi menyeluruh oleh teknisi berpengalaman. Selain itu, kami bekerja sama dengan berbagai lembaga pembiayaan (*leasing*) terkemuka untuk membantu mewujudkan impian Anda memiliki kendaraan dengan cicilan yang ringan dan fleksibel.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AutoPrestige Showroom. Dibuat untuk tugas sekolah.</p>
+    </footer>
+
+</body>
+</html>

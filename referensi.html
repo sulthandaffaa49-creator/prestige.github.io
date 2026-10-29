@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referensi Gambar - AutoPrestige</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e50914;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #e50914;
+        }
+
+        .btn-login {
+            background-color: transparent;
+            border: 2px solid #e50914;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: #e50914;
+        }
+
+        /* Container Utama */
+        .container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            color: #1a1a1a;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Referensi Gambar */
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ref-card {
+            border: 1px solid #eee;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ref-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .ref-info {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ref-info h3 {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .ref-info p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: #e50914;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <a href="index.html" class="logo">AutoPrestige</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="referensi.html" class="active">Referensi</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+     <!-- Referensi Gambar Banner Utama -->
+<div class="ref-card">
+    <!-- Path ke gambar banner di dalam folder images -->
+    <img src="gambar/banner.jpg" alt="Banner Utama Beranda" class="ref-img">
+    <div class="ref-info">
+        <div>
+            <h3>Banner Utama (Hero Section)</h3>
+            <p>Penggunaan: Latar Belakang Beranda (index.html)</p>
+        </div>
+        <!-- Link sumber jika kamu ambil dari website lain, atau bisa dikosongkan/diisi tulisan Dokumentasi Pribadi -->
+        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX6b3uB3Hv95cynSrxpbv8VH1inb1ptPithZ4oIH-ZaQ&s=10" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+    </div>
+</div>
+    
+    <div class="container">
+        <h2 class="section-title">Referensi Aset Gambar</h2>
+        <p class="section-desc">Berikut adalah daftar pratinjau gambar yang digunakan beserta link sumber aslinya.</p>
+
+        <div class="ref-grid">
+            
+            <!-- Item 1 -->
+            <div class="ref-card">
+                <img src="gambar/bmw.jpg">
+                <div class="ref-info">
+                    <div>
+                        <h3>BMW 320i Sport</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBNnm6AQaw9zL75IpDXK4J2jZvYdLjSkwYY00fjSrLRw&s=10" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="ref-card">
+                <img src="gambar/mercy.jpg" alt="Mercedes-Benz" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Mercedes-Benz C200</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiJ2IFOSSwTdf_Zmw40ZyE-4meWevCD668CA3pzv2Uyw&s=10" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="ref-card">
+                <img src="gambar/pajero.jpg" alt="Pajero Sport" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Mitsubishi Pajero Sport</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSIfuFLS-DDrq9DDypcQVao-y9A3UqzfBH5nmYZFEwJA&s=10" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="ref-card">
+                <img src="gambar/fortuner.jpg" alt="Toyota Fortuner" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Toyota Fortuner GR Sport</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://sewamobildisurabaya.org/wp-content/uploads/2023/07/toyota-new-fortuner-gr-sport_sq.jpg" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="ref-card">
+                <img src="gambar/alphard.jpg" alt="Toyota Alphard" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Toyota Alphard 2.5 G</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRRrjzmlZ6t_SmD2tTIiu0w23HULoPTJW56RHvjdlUZJVRfqF7mIK2VmQs&s=10" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="ref-card">
+                <img src="gambar/staria.jpg" alt="Hyundai Staria" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Hyundai Staria</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://media.indozone.id/crop/photo/indizone/2021/12/28/6gs9DpE/hyundai-staria-lakukan-uji-tabrakan-di-ancap-dapat-bintang-544.jpg" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="ref-card">
+                <img src="gambar/crv.jpg" alt="Honda CR-V" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Honda CR-V Turbo Prestige</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://media.indozone.id/crop/photo/p2/93/2024/09/08/FotoJet-7-1198803526.jpg" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="ref-card">
+                <img src="gambar/innova.jpg" alt="Innova Zenix" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Toyota Innova Zenix Hybrid</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://imgcdn.oto.com/large/gallery/color/38/2707/toyota-innova-zenix-hybrid-ev-color-373552.jpg" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="ref-card">
+                <img src="gambar/civic.jpg" alt="Honda Civic" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Honda Civic RS Sedan</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://img2.icarcdn.com/71637591/gallery_mobil-bekas-mobil123-honda-civic-rs-sedan-indonesia_4f52ac47-0654-46c9-99ba-c0427db79fc5.jpg.webp?smia=xTM" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="ref-card">
+                <img src="gambar/911.jpg" alt="Porsche 911 Carrera" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Porsche 911 Carrera Cabriolet</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/39ba75f9b610a05237adc3ca976891cd48f5832c/photos/3RE4Po41-D_PwrPRzln/edit/mNcIu.jpg?t=176712978904" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 11 -->
+            <div class="ref-card">
+                <img src="gambar/z4.jpg" alt="BMW Z4" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>BMW Z4 sDrive30i Roadster</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://www.momentummotorcars.com/imagetag/2481/9/l/Used-2022-BMW-Z4-sDrive30i-M-Sport-Package-1685720069.jpg" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 12 -->
+            <div class="ref-card">
+                <img src="gambar/mustang.jpg" alt="Ford Mustang" class="ref-img">
+                <div class="ref-info">
+                    <div>
+                        <h3>Ford Mustang 2.3L EcoBoost Convertible</h3>
+                        <p>Penggunaan: Katalog & Detail Produk</p>
+                    </div>
+                    <a href="https://content.homenetiol.com/2000292/2134450/0x0/stock_images/8/cc_2023FOC05_01_640/cc_2023FOC050010_01_640_M7.jpg" target="_blank" class="btn-link">Buka Sumber Gambar &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AutoPrestige Showroom. Dibuat untuk tugas sekolah.</p>
+    </footer>
+
+</body>
+</html>
